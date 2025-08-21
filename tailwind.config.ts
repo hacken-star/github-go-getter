@@ -52,6 +52,15 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				whispr: {
+					teal: 'hsl(var(--whispr-teal))',
+					purple: 'hsl(var(--whispr-purple))',
+					pink: 'hsl(var(--whispr-pink))',
+					blue: 'hsl(var(--whispr-blue))',
+					green: 'hsl(var(--whispr-green))',
+					yellow: 'hsl(var(--whispr-yellow))',
+					orange: 'hsl(var(--whispr-orange))'
+				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
