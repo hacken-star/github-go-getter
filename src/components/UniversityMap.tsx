@@ -20,138 +20,129 @@ interface UniversityMapProps {
 const mockUniversities: University[] = [
   {
     id: "1",
-    name: "Harvard University",
-    shortName: "Harvard",
-    x: 85,
-    y: 15,
+    name: "University of Jos",
+    shortName: "UNIJOS",
+    x: 65,
+    y: 25,
     color: "whispr-blue",
-    state: "Massachusetts"
+    state: "Plateau"
   },
   {
     id: "2", 
-    name: "Stanford University",
-    shortName: "Stanford",
-    x: 10,
-    y: 40,
+    name: "Karl-Kumm University",
+    shortName: "Karl-Kumm",
+    x: 70,
+    y: 30,
     color: "whispr-green",
-    state: "California"
+    state: "Plateau"
   },
   {
     id: "3",
-    name: "MIT",
-    shortName: "MIT", 
-    x: 86,
-    y: 16,
+    name: "Anan University",
+    shortName: "ANAN",
+    x: 60,
+    y: 35,
     color: "whispr-purple",
-    state: "Massachusetts"
+    state: "Plateau"
   },
   {
     id: "4",
-    name: "University of California Berkeley",
-    shortName: "UC Berkeley",
-    x: 8,
-    y: 38,
+    name: "Plateau State University",
+    shortName: "PLASU",
+    x: 55,
+    y: 28,
     color: "whispr-pink",
-    state: "California"
+    state: "Plateau"
   },
   {
     id: "5",
-    name: "Yale University",
-    shortName: "Yale",
-    x: 82,
-    y: 18,
+    name: "Federal University of Education",
+    shortName: "FUE Pankshin",
+    x: 75,
+    y: 40,
     color: "whispr-orange",
-    state: "Connecticut"
+    state: "Plateau"
   },
   {
     id: "6",
-    name: "Princeton University",
-    shortName: "Princeton",
-    x: 79,
-    y: 22,
+    name: "Royal College Of Health",
+    shortName: "Royal Shendam",
+    x: 68,
+    y: 45,
     color: "whispr-teal",
-    state: "New Jersey"
+    state: "Plateau"
   },
   {
     id: "7",
-    name: "Columbia University",
-    shortName: "Columbia",
-    x: 80,
-    y: 19,
+    name: "Low Land College Of Health",
+    shortName: "Lowland Shendam",
+    x: 72,
+    y: 50,
     color: "whispr-yellow",
-    state: "New York"
+    state: "Plateau"
   },
   {
     id: "8",
-    name: "University of Chicago",
-    shortName: "UChicago",
-    x: 60,
-    y: 30,
+    name: "Federal College of Animal Health and Production Technology",
+    shortName: "FCAHPT Vom",
+    x: 63,
+    y: 32,
     color: "whispr-indigo",
-    state: "Illinois"
+    state: "Plateau"
   },
   {
     id: "9",
-    name: "University of Pennsylvania",
-    shortName: "UPenn",
-    x: 78,
-    y: 23,
+    name: "Federal College of Forestry",
+    shortName: "FCF Jos",
+    x: 67,
+    y: 27,
     color: "whispr-blue",
-    state: "Pennsylvania"
+    state: "Plateau"
   },
   {
     id: "10",
-    name: "Cornell University",
-    shortName: "Cornell",
-    x: 77,
-    y: 20,
+    name: "Nigerian Institute Of Mining & Geosciences",
+    shortName: "NIM Jos",
+    x: 69,
+    y: 29,
     color: "whispr-green",
-    state: "New York"
+    state: "Plateau"
   },
   {
     id: "11",
-    name: "Duke University",
-    shortName: "Duke",
-    x: 73,
-    y: 35,
+    name: "Federal College of Land Resources Technology",
+    shortName: "FCLRT Jos",
+    x: 66,
+    y: 33,
     color: "whispr-purple",
-    state: "North Carolina"
+    state: "Plateau"
   },
   {
     id: "12",
-    name: "Northwestern University",
-    shortName: "Northwestern",
-    x: 58,
-    y: 28,
+    name: "College of Health Technology",
+    shortName: "CHT Zawan",
+    x: 71,
+    y: 38,
     color: "whispr-pink",
-    state: "Illinois"
+    state: "Plateau"
   },
   {
     id: "13",
-    name: "Johns Hopkins University",
-    shortName: "Johns Hopkins",
-    x: 76,
-    y: 25,
+    name: "Federal College of Veterinary and Medical Laboratory Tech",
+    shortName: "FCVMLT Vom",
+    x: 64,
+    y: 31,
     color: "whispr-orange",
-    state: "Maryland"
+    state: "Plateau"
   },
   {
     id: "14",
-    name: "University of Southern California",
-    shortName: "USC",
-    x: 12,
-    y: 45,
+    name: "Abdullahi Maikano College of Education",
+    shortName: "AMCOE Wase",
+    x: 58,
+    y: 42,
     color: "whispr-teal",
-    state: "California"
-  },
-  {
-    id: "15",
-    name: "New York University",
-    shortName: "NYU",
-    x: 81,
-    y: 21,
-    color: "whispr-yellow",
-    state: "New York"
+    state: "Plateau"
   }
 ];
 
