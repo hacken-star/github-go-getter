@@ -6,6 +6,7 @@ import CreatePost from "@/components/CreatePost";
 import PostDetail from "@/components/PostDetail";
 import Profile from "@/components/Profile";
 import Notifications from "@/components/Notifications";
+import HomePage from "@/components/HomePage";
 
 interface University {
   id: string;
@@ -26,10 +27,12 @@ interface Post {
   views: number;
   timeAgo: string;
   color: string;
+  university?: string;
+  isLiked?: boolean;
 }
 
 const Index = () => {
-  const [currentPage, setCurrentPage] = useState("map");
+  const [currentPage, setCurrentPage] = useState("home");
   const [selectedUniversity, setSelectedUniversity] = useState<University | null>(null);
   const [selectedPost, setSelectedPost] = useState<Post | null>(null);
   const [showCreatePost, setShowCreatePost] = useState(false);
@@ -93,6 +96,8 @@ const Index = () => {
     }
 
     switch (currentPage) {
+      case "home":
+        return <HomePage onPostClick={handlePostClick} />;
       case "map":
         return <UniversityMap onSelectUniversity={handleSelectUniversity} />;
       case "notifications":
@@ -100,7 +105,7 @@ const Index = () => {
       case "profile":
         return <Profile onNavigate={handleNavigate} />;
       default:
-        return <UniversityMap onSelectUniversity={handleSelectUniversity} />;
+        return <HomePage onPostClick={handlePostClick} />;
     }
   };
 

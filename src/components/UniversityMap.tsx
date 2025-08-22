@@ -38,39 +38,120 @@ const mockUniversities: University[] = [
   },
   {
     id: "3",
-    name: "University of Texas at Austin",
-    shortName: "UT Austin", 
-    x: 45,
-    y: 70,
-    color: "whispr-orange",
-    state: "Texas"
+    name: "MIT",
+    shortName: "MIT", 
+    x: 86,
+    y: 16,
+    color: "whispr-purple",
+    state: "Massachusetts"
   },
   {
     id: "4",
-    name: "New York University",
-    shortName: "NYU",
-    x: 80,
-    y: 25,
-    color: "whispr-purple",
-    state: "New York"
+    name: "University of California Berkeley",
+    shortName: "UC Berkeley",
+    x: 8,
+    y: 38,
+    color: "whispr-pink",
+    state: "California"
   },
   {
     id: "5",
-    name: "University of California, Berkeley",
-    shortName: "UC Berkeley",
-    x: 8,
+    name: "Yale University",
+    shortName: "Yale",
+    x: 82,
+    y: 18,
+    color: "whispr-orange",
+    state: "Connecticut"
+  },
+  {
+    id: "6",
+    name: "Princeton University",
+    shortName: "Princeton",
+    x: 79,
+    y: 22,
+    color: "whispr-teal",
+    state: "New Jersey"
+  },
+  {
+    id: "7",
+    name: "Columbia University",
+    shortName: "Columbia",
+    x: 80,
+    y: 19,
+    color: "whispr-yellow",
+    state: "New York"
+  },
+  {
+    id: "8",
+    name: "University of Chicago",
+    shortName: "UChicago",
+    x: 60,
+    y: 30,
+    color: "whispr-indigo",
+    state: "Illinois"
+  },
+  {
+    id: "9",
+    name: "University of Pennsylvania",
+    shortName: "UPenn",
+    x: 78,
+    y: 23,
+    color: "whispr-blue",
+    state: "Pennsylvania"
+  },
+  {
+    id: "10",
+    name: "Cornell University",
+    shortName: "Cornell",
+    x: 77,
+    y: 20,
+    color: "whispr-green",
+    state: "New York"
+  },
+  {
+    id: "11",
+    name: "Duke University",
+    shortName: "Duke",
+    x: 73,
     y: 35,
+    color: "whispr-purple",
+    state: "North Carolina"
+  },
+  {
+    id: "12",
+    name: "Northwestern University",
+    shortName: "Northwestern",
+    x: 58,
+    y: 28,
+    color: "whispr-pink",
+    state: "Illinois"
+  },
+  {
+    id: "13",
+    name: "Johns Hopkins University",
+    shortName: "Johns Hopkins",
+    x: 76,
+    y: 25,
+    color: "whispr-orange",
+    state: "Maryland"
+  },
+  {
+    id: "14",
+    name: "University of Southern California",
+    shortName: "USC",
+    x: 12,
+    y: 45,
     color: "whispr-teal",
     state: "California"
   },
   {
-    id: "6",
-    name: "University of Florida",
-    shortName: "UF",
-    x: 75,
-    y: 80,
-    color: "whispr-pink",
-    state: "Florida"
+    id: "15",
+    name: "New York University",
+    shortName: "NYU",
+    x: 81,
+    y: 21,
+    color: "whispr-yellow",
+    state: "New York"
   }
 ];
 

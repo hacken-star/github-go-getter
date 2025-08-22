@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Heart, MessageCircle, Eye, Plus, ArrowLeft } from "lucide-react";
+import { Heart, MessageCircle, Eye, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 interface Post {
@@ -11,81 +11,107 @@ interface Post {
   views: number;
   timeAgo: string;
   color: string;
+  university: string;
   isLiked: boolean;
 }
 
-interface UniversityFeedProps {
-  universityName: string;
-  onBack: () => void;
-  onCreatePost: () => void;
+interface HomePageProps {
   onPostClick: (post: Post) => void;
 }
 
-const mockPosts: Post[] = [
+const mockHomePosts: Post[] = [
   {
-    id: "1",
-    text: "Finals week is killing me! Anyone else pulling all-nighters? 😭",
-    likes: 24,
-    comments: 8,
-    views: 156,
-    timeAgo: "2h",
-    color: "whispr-blue",
-    isLiked: false
-  },
-  {
-    id: "2",
-    text: "The cafeteria food today was actually good for once! What happened? 😂",
-    likes: 18,
-    comments: 12,
-    views: 89,
-    timeAgo: "4h",
-    color: "whispr-green",
-    isLiked: false
-  },
-  {
-    id: "3",
-    text: "Prof Johnson's lecture was so confusing today. Did anyone understand the quantum mechanics part?",
-    likes: 31,
-    comments: 15,
-    views: 203,
-    timeAgo: "6h",
-    color: "whispr-pink",
-    isLiked: false
-  },
-  {
-    id: "4",
-    text: "Campus WiFi is down AGAIN. How are we supposed to submit assignments? 🤦‍♀️",
-    likes: 45,
+    id: "h1",
+    text: "Anyone else struggling with organic chemistry? The midterm is next week and I'm completely lost 😭",
+    likes: 47,
     comments: 23,
-    views: 178,
-    timeAgo: "8h",
-    color: "whispr-purple",
-    isLiked: false
-  },
-  {
-    id: "5",
-    text: "Found a lost wallet near the library. DM me if it's yours!",
-    likes: 67,
-    comments: 5,
     views: 234,
-    timeAgo: "12h",
-    color: "whispr-yellow",
+    timeAgo: "15m",
+    color: "whispr-blue",
+    university: "Harvard University",
     isLiked: false
   },
   {
-    id: "6",
-    text: "Study group for Organic Chemistry forming! We meet every Tuesday and Thursday at 7 PM in the library. All welcome! 📚✨",
-    likes: 89,
+    id: "h2", 
+    text: "The sunset from the Stanford campus today was absolutely breathtaking! 🌅",
+    likes: 128,
     comments: 34,
-    views: 445,
-    timeAgo: "1d",
+    views: 567,
+    timeAgo: "1h",
+    color: "whispr-orange",
+    university: "Stanford University",
+    isLiked: false
+  },
+  {
+    id: "h3",
+    text: "MIT's robotics lab is accepting new members! If you're interested in AI and robotics, this is your chance 🤖",
+    likes: 89,
+    comments: 56,
+    views: 890,
+    timeAgo: "2h",
+    color: "whispr-purple",
+    university: "MIT",
+    isLiked: false
+  },
+  {
+    id: "h4",
+    text: "Berkeley's food trucks are on another level today. The Korean BBQ truck is a must-try! 🌮",
+    likes: 73,
+    comments: 19,
+    views: 345,
+    timeAgo: "3h",
+    color: "whispr-green",
+    university: "UC Berkeley",
+    isLiked: false
+  },
+  {
+    id: "h5",
+    text: "Yale's library is absolutely stunning during autumn. Perfect study vibes with all the fall colors 📚🍂",
+    likes: 156,
+    comments: 42,
+    views: 678,
+    timeAgo: "4h",
+    color: "whispr-pink",
+    university: "Yale University",
+    isLiked: false
+  },
+  {
+    id: "h6",
+    text: "Princeton's campus tours are starting soon! Great opportunity for prospective students to see what we're all about ✨",
+    likes: 94,
+    comments: 28,
+    views: 456,
+    timeAgo: "5h",
     color: "whispr-teal",
+    university: "Princeton University",
+    isLiked: false
+  },
+  {
+    id: "h7",
+    text: "Columbia's journalism program just announced some exciting new internship opportunities with major news outlets! 📰",
+    likes: 67,
+    comments: 15,
+    views: 289,
+    timeAgo: "6h",
+    color: "whispr-yellow",
+    university: "Columbia University",
+    isLiked: false
+  },
+  {
+    id: "h8",
+    text: "UChicago's physics department is hosting a Nobel laureate next week. Free pizza and mind-blowing science! 🍕⚛️",
+    likes: 112,
+    comments: 38,
+    views: 523,
+    timeAgo: "7h",
+    color: "whispr-indigo",
+    university: "University of Chicago",
     isLiked: false
   }
 ];
 
-const UniversityFeed = ({ universityName, onBack, onCreatePost, onPostClick }: UniversityFeedProps) => {
-  const [posts, setPosts] = useState<Post[]>(mockPosts);
+const HomePage = ({ onPostClick }: HomePageProps) => {
+  const [posts, setPosts] = useState<Post[]>(mockHomePosts);
 
   const handleLike = (postId: string, e: React.MouseEvent) => {
     e.stopPropagation();
@@ -106,31 +132,14 @@ const UniversityFeed = ({ universityName, onBack, onCreatePost, onPostClick }: U
     <div className="min-h-screen bg-gradient-map">
       {/* Header */}
       <div className="sticky top-0 z-10 bg-white/90 backdrop-blur-lg border-b border-border p-4">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={onBack}
-              className="p-2 hover:bg-muted rounded-full"
-            >
-              <ArrowLeft className="h-5 w-5" />
-            </Button>
-            <div>
-              <h1 className="font-semibold text-foreground">{universityName}</h1>
-              <p className="text-sm text-muted-foreground">Campus Feed</p>
-            </div>
-          </div>
-          
-          <Button
-            onClick={onCreatePost}
-            size="sm"
-            className="bg-gradient-primary text-white shadow-bubble-glow hover:shadow-bubble transition-all duration-300"
-          >
-            <Plus className="h-4 w-4 mr-1" />
-            Post
-          </Button>
+        <div className="flex items-center justify-center">
+          <h1 className="text-3xl font-bold bg-gradient-primary bg-clip-text text-transparent">
+            Campus Feed
+          </h1>
         </div>
+        <p className="text-center text-muted-foreground mt-1">
+          See what's happening across all campuses
+        </p>
       </div>
 
       {/* Posts Feed */}
@@ -141,6 +150,12 @@ const UniversityFeed = ({ universityName, onBack, onCreatePost, onPostClick }: U
             onClick={() => onPostClick(post)}
             className={`bg-white/80 backdrop-blur-sm rounded-2xl p-4 shadow-bubble cursor-pointer transition-all duration-300 hover:shadow-bubble-glow hover:bg-white/90 border-l-4 border-whispr-${post.color}`}
           >
+            {/* University Badge */}
+            <div className="flex items-center mb-3">
+              <div className={`w-3 h-3 rounded-full bg-whispr-${post.color} mr-2`}></div>
+              <span className="text-sm font-medium text-muted-foreground">{post.university}</span>
+            </div>
+
             {/* Post Content */}
             <p className="text-foreground mb-4 leading-relaxed">{post.text}</p>
 
@@ -190,4 +205,4 @@ const UniversityFeed = ({ universityName, onBack, onCreatePost, onPostClick }: U
   );
 };
 
-export default UniversityFeed;
+export default HomePage;
