@@ -241,6 +241,19 @@ const UniversityMap = ({ onSelectUniversity }: UniversityMapProps) => {
           <p>No universities found matching "{searchTerm}"</p>
         </div>
       )}
+
+      {/* Add Institution Button */}
+      <div className="mt-8 text-center">
+        <Button 
+          className="bg-gradient-primary text-white px-8 py-3 rounded-2xl shadow-bubble hover:shadow-bubble-glow transition-all duration-300"
+          onClick={() => {
+            // Add institution functionality can be implemented here
+            console.log("Add institution clicked");
+          }}
+        >
+          Add Institution
+        </Button>
+      </div>
     </div>
   );
 };
