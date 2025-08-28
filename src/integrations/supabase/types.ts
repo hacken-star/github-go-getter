@@ -20,25 +20,89 @@ export type Database = {
           created_at: string
           expires_at: string
           id: string
+          parent_id: string | null
           post_id: string
+          user_id: string | null
         }
         Insert: {
           content: string
           created_at?: string
           expires_at?: string
           id?: string
+          parent_id?: string | null
           post_id: string
+          user_id?: string | null
         }
         Update: {
           content?: string
           created_at?: string
           expires_at?: string
           id?: string
+          parent_id?: string | null
           post_id?: string
+          user_id?: string | null
         }
         Relationships: [
           {
+            foreignKeyName: "comments_parent_id_fkey"
+            columns: ["parent_id"]
+            isOneToOne: false
+            referencedRelation: "comments"
+            referencedColumns: ["id"]
+          },
+          {
             foreignKeyName: "comments_post_id_fkey"
+            columns: ["post_id"]
+            isOneToOne: false
+            referencedRelation: "posts"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      notifications: {
+        Row: {
+          comment_id: string | null
+          created_at: string
+          expires_at: string
+          id: string
+          post_id: string | null
+          read: boolean
+          triggered_by_user_id: string
+          type: string
+          user_id: string
+        }
+        Insert: {
+          comment_id?: string | null
+          created_at?: string
+          expires_at?: string
+          id?: string
+          post_id?: string | null
+          read?: boolean
+          triggered_by_user_id: string
+          type: string
+          user_id: string
+        }
+        Update: {
+          comment_id?: string | null
+          created_at?: string
+          expires_at?: string
+          id?: string
+          post_id?: string | null
+          read?: boolean
+          triggered_by_user_id?: string
+          type?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "notifications_comment_id_fkey"
+            columns: ["comment_id"]
+            isOneToOne: false
+            referencedRelation: "comments"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "notifications_post_id_fkey"
             columns: ["post_id"]
             isOneToOne: false
             referencedRelation: "posts"
@@ -57,6 +121,7 @@ export type Database = {
           image_url: string | null
           likes_count: number
           university_id: string
+          user_id: string | null
           video_url: string | null
           views_count: number
         }
@@ -70,6 +135,7 @@ export type Database = {
           image_url?: string | null
           likes_count?: number
           university_id: string
+          user_id?: string | null
           video_url?: string | null
           views_count?: number
         }
@@ -83,6 +149,7 @@ export type Database = {
           image_url?: string | null
           likes_count?: number
           university_id?: string
+          user_id?: string | null
           video_url?: string | null
           views_count?: number
         }
@@ -96,6 +163,36 @@ export type Database = {
           },
         ]
       }
+      profiles: {
+        Row: {
+          avatar_url: string | null
+          created_at: string
+          display_name: string | null
+          id: string
+          updated_at: string
+          user_id: string
+          username: string
+        }
+        Insert: {
+          avatar_url?: string | null
+          created_at?: string
+          display_name?: string | null
+          id?: string
+          updated_at?: string
+          user_id: string
+          username: string
+        }
+        Update: {
+          avatar_url?: string | null
+          created_at?: string
+          display_name?: string | null
+          id?: string
+          updated_at?: string
+          user_id?: string
+          username?: string
+        }
+        Relationships: []
+      }
       reactions: {
         Row: {
           created_at: string
@@ -103,6 +200,7 @@ export type Database = {
           id: string
           post_id: string
           reaction_type: string
+          user_id: string | null
         }
         Insert: {
           created_at?: string
@@ -110,6 +208,7 @@ export type Database = {
           id?: string
           post_id: string
           reaction_type?: string
+          user_id?: string | null
         }
         Update: {
           created_at?: string
@@ -117,6 +216,7 @@ export type Database = {
           id?: string
           post_id?: string
           reaction_type?: string
+          user_id?: string | null
         }
         Relationships: [
           {
