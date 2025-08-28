@@ -196,19 +196,17 @@ const UniversityMap = ({ onSelectUniversity }: UniversityMapProps) => {
               }`}
               style={{ left: `${university.x}%`, top: `${university.y}%` }}
             >
-              <div className={`relative p-3 rounded-full bg-whispr-${university.color} shadow-bubble-glow transition-all duration-300 ${
+              <div className={`relative p-3 rounded-full shadow-bubble-glow transition-all duration-300 ${
                 hoveredUni === university.id ? 'scale-125 shadow-bubble' : ''
-              }`}>
+              }`} style={{ backgroundColor: `hsl(var(--whispr-${university.color}))` }}>
                 <MapPin className="h-4 w-4 text-white" />
                 
-                {/* University label */}
-                <div className={`absolute top-full mt-2 left-1/2 transform -translate-x-1/2 transition-all duration-300 ${
-                  hoveredUni === university.id ? 'opacity-100 scale-100' : 'opacity-0 scale-90'
-                }`}>
-                  <div className="bg-white/95 backdrop-blur-sm px-3 py-1 rounded-lg shadow-bubble text-xs font-medium text-foreground whitespace-nowrap">
+                {/* University label - Always visible */}
+                <div className="absolute top-full mt-2 left-1/2 transform -translate-x-1/2 z-30">
+                  <div className="bg-white/95 backdrop-blur-sm px-2 py-1 rounded-lg shadow-bubble text-xs font-medium text-foreground whitespace-nowrap border border-border">
                     {university.shortName}
                   </div>
-                  <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1 w-2 h-2 bg-white/95 rotate-45"></div>
+                  <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1 w-2 h-2 bg-white/95 rotate-45 border-l border-t border-border"></div>
                 </div>
               </div>
             </Button>
@@ -226,7 +224,7 @@ const UniversityMap = ({ onSelectUniversity }: UniversityMapProps) => {
             variant="ghost"
             className="w-full justify-start p-4 h-auto bg-white/60 backdrop-blur-sm hover:bg-white/80 rounded-2xl shadow-bubble transition-all duration-300 hover:shadow-bubble-glow"
           >
-            <div className={`w-4 h-4 rounded-full bg-whispr-${university.color} mr-3 flex-shrink-0`}></div>
+            <div className={`w-4 h-4 rounded-full mr-3 flex-shrink-0`} style={{ backgroundColor: `hsl(var(--whispr-${university.color}))` }}></div>
             <div className="text-left">
               <div className="font-medium text-foreground">{university.name}</div>
               <div className="text-sm text-muted-foreground">{university.state}</div>

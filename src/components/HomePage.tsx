@@ -156,7 +156,7 @@ const HomePage = ({ onPostClick }: HomePageProps) => {
       <div className="sticky top-0 z-10 bg-white/90 backdrop-blur-lg border-b border-border p-4">
         <div className="flex items-center justify-center">
           <h1 className="text-3xl font-bold bg-gradient-primary bg-clip-text text-transparent">
-            Campus Feed
+            Whispr
           </h1>
         </div>
         <p className="text-center text-muted-foreground mt-1">
@@ -170,11 +170,12 @@ const HomePage = ({ onPostClick }: HomePageProps) => {
           <div
             key={post.id}
             onClick={() => onPostClick(post)}
-            className={`bg-white/80 backdrop-blur-sm rounded-2xl p-4 shadow-bubble cursor-pointer transition-all duration-300 hover:shadow-bubble-glow hover:bg-white/90 border-l-4 border-whispr-${post.color}`}
+            className={`bg-white/80 backdrop-blur-sm rounded-2xl p-4 shadow-bubble cursor-pointer transition-all duration-300 hover:shadow-bubble-glow hover:bg-white/90 border-l-4`}
+            style={{ borderLeftColor: `hsl(var(--whispr-${post.color}))` }}
           >
             {/* University Badge */}
             <div className="flex items-center mb-3">
-              <div className={`w-3 h-3 rounded-full bg-whispr-${post.color} mr-2`}></div>
+              <div className={`w-3 h-3 rounded-full mr-2`} style={{ backgroundColor: `hsl(var(--whispr-${post.color}))` }}></div>
               <span className="text-sm font-medium text-muted-foreground">{post.university}</span>
             </div>
 
@@ -186,7 +187,7 @@ const HomePage = ({ onPostClick }: HomePageProps) => {
               <div className="flex items-center gap-4">
                 <div 
                   className={`flex items-center gap-1 transition-colors cursor-pointer ${
-                    post.isLiked ? 'text-whispr-pink' : 'hover:text-whispr-pink'
+                    post.isLiked ? 'text-red-500' : 'hover:text-red-500'
                   }`}
                   onClick={(e) => handleLike(post.id, e)}
                 >
@@ -194,7 +195,7 @@ const HomePage = ({ onPostClick }: HomePageProps) => {
                   <span className="text-sm">{post.likes}</span>
                 </div>
                 
-                <div className="flex items-center gap-1 hover:text-whispr-blue transition-colors cursor-pointer">
+                <div className="flex items-center gap-1 hover:text-blue-500 transition-colors cursor-pointer">
                   <MessageCircle className="h-4 w-4" />
                   <span className="text-sm">{post.comments}</span>
                 </div>
